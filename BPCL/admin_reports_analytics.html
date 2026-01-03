@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Reports & Analytics</title>
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f6f9;
+}
+
+/* Topbar */
+.topbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    z-index: 1002;
+}
+
+.menu-btn {
+    font-size: 28px;
+    color: #0b4cb8;
+    cursor: pointer;
+    margin-right: 15px;
+}
+
+.topbar-title {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Overlay */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.4);
+    display: none;
+    z-index: 1000;
+}
+
+/* Sidebar */
+.sidebar {
+    position: fixed;
+    top: 60px;
+    left: -200px; /* hidden by default */
+    width: 200px;
+    height: calc(100% - 60px);
+    background: #0b4cb8;
+    padding-top: 20px;
+    transition: left 0.3s ease;
+    z-index: 1001;
+}
+
+.sidebar a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    padding: 12px 20px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    font-weight: 500;
+}
+
+.sidebar a.active,
+.sidebar a:hover {
+    background: #083a8f;
+}
+
+.sidebar.active {
+    left: 0;
+}
+.overlay.active {
+    display: block;
+}
+
+/* Main content */
+.main {
+    margin-top: 60px;
+    padding: 20px;
+    transition: margin-left 0.3s ease;
+}
+
+/* Cards */
+.card {
+    background: #fff;
+    padding: 15px 20px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.card h3 {
+    margin-top: 0;
+}
+
+/* Filters */
+.filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.filters select,
+.filters input {
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+/* Buttons */
+.btn {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #fff;
+    font-size: 13px;
+    margin-right: 5px;
+}
+
+.blue { background: #1976d2; }
+.gray { background: #757575; }
+
+/* Desktop view */
+@media(min-width:768px){
+    .sidebar {
+        left: 0;
+    }
+    .overlay { display: none !important; }
+    .main { margin-left: 200px; }
+    .menu-btn { display: none; }
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+    <span class="menu-btn" id="menuBtn">☰</span>
+    <span class="topbar-title">Admin Panel</span>
+</div>
+
+<div class="overlay" id="overlay"></div>
+
+<div class="sidebar" id="sidebar">
+    <a href="admin_dashboard.html">Dashboard</a>
+    <a href="dealer_management.html">Dealers</a>
+    <a href="admin_redeem_maagement.html">Redeem Requests</a>
+    <a href="admin_offers.html">Offers</a>
+    <a href="admin_reports_analytics.html" class="active">Reports</a>
+    <a href="admin_settings.html">Settings</a>
+    <a href="admin_support.html">Support</a>
+</div>
+
+<div class="main">
+<h1>Reports & Analytics</h1>
+
+<!-- Filters Card -->
+<div class="card">
+<h3>Generate Report</h3>
+<div class="filters">
+    <select id="reportType">
+        <option value="product">Product-wise Report</option>
+        <option value="customer">Customer-wise Report</option>
+        <option value="cumulative">Cumulative Report</option>
+    </select>
+
+    <input type="month" id="startMonth" placeholder="Start Month">
+    <input type="month" id="endMonth" placeholder="End Month">
+
+    <button class="btn blue" onclick="generateReport()">Generate</button>
+</div>
+</div>
+
+<!-- Summary Cards -->
+<div class="card">
+<p>Total Dealers: 120</p>
+<p>Total Customers: 2,350</p>
+<p>Total Points Issued: 1,25,000</p>
+</div>
+
+<!-- Download Options -->
+<div class="card">
+<button class="btn blue">Download Excel</button>
+<button class="btn gray">Download PDF</button>
+</div>
+
+</div>
+
+<script>
+const menuBtn = document.getElementById('menuBtn');
+const sidebar = document.getElementById('sidebar');
+const overlay = document.getElementById('overlay');
+
+menuBtn.addEventListener('click', () => {
+    sidebar.classList.add('active');
+    overlay.classList.add('active');
+});
+
+overlay.addEventListener('click', () => {
+    sidebar.classList.remove('active');
+    overlay.classList.remove('active');
+});
+
+// Generate report function
+function generateReport() {
+    const type = document.getElementById('reportType').value;
+    const start = document.getElementById('startMonth').value;
+    const end = document.getElementById('endMonth').value;
+
+    if(!start || !end) {
+        alert("Please select start and end months");
+        return;
+    }
+
+    if(type === "cumulative") {
+        alert(`Generating cumulative report from ${start} to ${end}`);
+    } else if(type === "product") {
+        alert(`Generating product-wise report from ${start} to ${end}`);
+    } else if(type === "customer") {
+        alert(`Generating customer-wise report from ${start} to ${end}`);
+    }
+
+    // Here you can implement actual logic to fetch and display report
+}
+</script>
+
+</body>
+</html>

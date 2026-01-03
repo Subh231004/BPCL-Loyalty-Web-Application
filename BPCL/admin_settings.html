@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Settings</title>
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f6f9;
+}
+
+/* Topbar */
+.topbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    z-index: 1002;
+}
+
+.menu-btn {
+    font-size: 28px;
+    color: #0b4cb8;
+    cursor: pointer;
+    margin-right: 15px;
+}
+
+.topbar-title {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Overlay */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.4);
+    display: none;
+    z-index: 1000;
+}
+
+/* Sidebar */
+.sidebar {
+    position: fixed;
+    top: 60px;
+    left: -200px; /* hidden by default */
+    width: 200px;
+    height: calc(100% - 60px);
+    background: #0b4cb8;
+    padding-top: 20px;
+    transition: left 0.3s ease;
+    z-index: 1001;
+}
+
+.sidebar a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    padding: 12px 20px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    font-weight: 500;
+}
+
+.sidebar a.active,
+.sidebar a:hover {
+    background: #083a8f;
+}
+
+.sidebar.active {
+    left: 0;
+}
+.overlay.active {
+    display: block;
+}
+
+/* Main content */
+.main {
+    margin-top: 60px;
+    padding: 20px;
+    transition: margin-left 0.3s ease;
+}
+
+/* Cards */
+.card {
+    background: #fff;
+    padding: 15px 20px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.card h3 {
+    margin-top: 0;
+}
+
+/* Buttons */
+.btn {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #fff;
+    font-size: 13px;
+    margin-top: 8px;
+}
+
+.blue { background: #1976d2; }
+
+/* Desktop view */
+@media(min-width:768px){
+    .sidebar {
+        left: 0;
+    }
+    .overlay { display: none !important; }
+    .main { margin-left: 200px; }
+    .menu-btn { display: none; }
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+    <span class="menu-btn" id="menuBtn">☰</span>
+    <span class="topbar-title">Admin Panel</span>
+</div>
+
+<div class="overlay" id="overlay"></div>
+
+<div class="sidebar" id="sidebar">
+    <a href="admin_dashboard.html">Dashboard</a>
+    <a href="dealer_management.html">Dealers</a>
+    <a href="admin_redeem_maagement.html">Redeem Requests</a>
+    <a href="admin_offers.html">Offers</a>
+    <a href="admin_reports_analytics.html">Reports</a>
+    <a href="admin_settings.html" class="active">Settings</a>
+    <a href="admin_support.html">Support</a>
+</div>
+
+<div class="main">
+<h1>Settings</h1>
+
+<!-- Application Settings -->
+<div class="card">
+<h3>Application Settings</h3>
+<p><b>Application Name:</b> Loyalty Rewards App</p>
+<p><b>Company Name:</b> Bharat Petroleum</p>
+<p><b>Default Language:</b> English</p>
+<button class="btn blue">Edit App Settings</button>
+</div>
+
+<!-- Loyalty Rules -->
+<div class="card">
+<h3>Loyalty & Points Settings</h3>
+<p><b>Points Expiry:</b> 365 Days</p>
+<p><b>Minimum Redeem Points:</b> 200</p>
+<p><b>Maximum Redeem Limit:</b> 5,000 points/day</p>
+<p><b>Auto Redeem Approval:</b> Disabled</p>
+<button class="btn blue">Edit Loyalty Rules</button>
+</div>
+
+<!-- Dealer Settings -->
+<div class="card">
+<h3>Dealer Configuration</h3>
+<p><b>Dealer Approval:</b> Manual</p>
+<p><b>Dealer Levels:</b> Silver, Gold, Platinum</p>
+<p><b>KYC Mandatory:</b> Yes</p>
+<button class="btn blue">Edit Dealer Settings</button>
+</div>
+
+<!-- Notification Settings -->
+<div class="card">
+<h3>Notification Settings</h3>
+<p><b>Push Notifications:</b> Enabled</p>
+<p><b>SMS Alerts:</b> Enabled</p>
+<p><b>Email Alerts:</b> Disabled</p>
+<button class="btn blue">Edit Notification Settings</button>
+</div>
+
+<!-- Security Settings -->
+<div class="card">
+<h3>Security Settings</h3>
+<p><b>Password Expiry:</b> 90 Days</p>
+<p><b>Two-Factor Authentication:</b> Enabled</p>
+<p><b>Max Login Attempts:</b> 5</p>
+<button class="btn blue">Edit Security Settings</button>
+</div>
+
+<!-- System Maintenance -->
+<div class="card">
+<h3>System & Maintenance</h3>
+<p><b>System Mode:</b> Live</p>
+<p><b>Last Backup:</b> 13 Jan 2025, 02:00 AM</p>
+<p><b>Auto Backup:</b> Enabled (Daily)</p>
+<button class="btn blue">Run Backup</button>
+</div>
+
+</div>
+
+<script>
+const menuBtn = document.getElementById('menuBtn');
+const sidebar = document.getElementById('sidebar');
+const overlay = document.getElementById('overlay');
+
+menuBtn.addEventListener('click', () => {
+    sidebar.classList.add('active');
+    overlay.classList.add('active');
+});
+
+overlay.addEventListener('click', () => {
+    sidebar.classList.remove('active');
+    overlay.classList.remove('active');
+});
+</script>
+
+</body>
+</html>

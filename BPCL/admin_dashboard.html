@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>BPCL Loyalty App – Admin Dashboard</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app">
+
+    <!-- Overlay -->
+    <div class="overlay" onclick="toggleSidebar()"></div>
+
+    <div class="container">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <h2 class="logo">BPCL App</h2>
+            <ul>
+                <a href="admin_dashboard.html" class="active">Dashboard</a>
+                <a href="dealer_management.html">Dealers</a>
+                <a href="admin_redeem_maagement.html">Redeem Requests</a>
+                <a href="admin_offers.html">Offers</a>
+                <a href="admin_reports_analytics.html">Reports</a>
+                <a href="admin_settings.html">Settings</a>
+                <a href="admin_support.html">Support</a>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main">
+
+            <!-- Header -->
+            <header class="header">
+                <span class="menu-btn" onclick="toggleSidebar()">☰</span>
+                <h1>Admin Dashboard</h1>
+                <div class="icons">
+                    <span>👤</span>
+                </div>
+            </header>
+
+            <!-- Card -->
+            <section class="cards">
+                <div class="card blue">
+                    <p>Total Dealers</p>
+                    <h2>1,250</h2>
+                </div>
+            </section>
+
+            <!-- Pending Redeem -->
+            <section class="stat-card">
+                <p>Pending Redeem Requests</p>
+                <h2 class="danger">35</h2>
+                <button>Approve Now</button>
+            </section>
+
+            <!-- Dealer Performance -->
+            <section class="stat-card">
+                <h3>⛽ Dealer Performance – Monthly Fuel Lift</h3>
+
+                <!-- Filters -->
+                <div class="filters">
+                    <select>
+                        <option>Top Performing</option>
+                        <option>Least Performing</option>
+                    </select>
+
+                    <select>
+                        <option>Top 10</option>
+                        <option>Top 20</option>
+                        <option>Least 10</option>
+                        <option>Least 20</option>
+                    </select>
+
+                    <select>
+                        <option>January 2025</option>
+                        <option>February 2025</option>
+                        <option>March 2025</option>
+                        <option>April 2025</option>
+                    </select>
+
+                    <select>
+                        <option>MS (Petrol)</option>
+                        <option>HSD (Diesel)</option>
+                        <option>Others (Lubricants)</option>
+                    </select>
+                </div>
+
+                <!-- Dealer List -->
+                <div class="dealer-list">
+                    <div class="dealer-row"><span>🥇 Shukla Petroleum</span><span class="fuel">1,420 KL</span></div>
+                    <div class="dealer-row"><span>🥈 Gupta Fuels</span><span class="fuel">1,310 KL</span></div>
+                    <div class="dealer-row"><span>🥉 Verma Traders</span><span class="fuel">1,250 KL</span></div>
+                    <div class="dealer-row"><span>4. Patel Agencies</span><span class="fuel">1,180 KL</span></div>
+                    <div class="dealer-row"><span>5. Singh Enterprises</span><span class="fuel">1,120 KL</span></div>
+                    <div class="dealer-row"><span>6. Sharma Fuel Co.</span><span class="fuel">1,050 KL</span></div>
+                    <div class="dealer-row"><span>7. Agarwal Petrol</span><span class="fuel">980 KL</span></div>
+                    <div class="dealer-row"><span>8. Rathi Energy</span><span class="fuel">920 KL</span></div>
+                    <div class="dealer-row"><span>9. Kapoor Fuels</span><span class="fuel">880 KL</span></div>
+                    <div class="dealer-row"><span>10. Mehta Traders</span><span class="fuel">830 KL</span></div>
+                </div>
+
+                <p class="note">
+                    * Fuel quantity based on selected month & fuel type
+                </p>
+            </section>
+
+        </main>
+    </div>
+</div>
+
+<script>
+function toggleSidebar(){
+    document.body.classList.toggle("show-sidebar");
+}
+</script>
+
+</body>
+</html>

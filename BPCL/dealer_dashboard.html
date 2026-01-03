@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Dealer Dashboard</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="dealer_style.css">
+</head>
+<body>
+
+<div class="app">
+
+<div class="topbar">
+  Dealer Dashboard
+  <div>
+    <a href="dealer_profile.html">👤</a>
+  </div>
+</div>
+
+<div class="content">
+
+<div class="stats">
+  <div class="card stat"><p>Total Customers</p><h2>2,150</h2></div>
+  <div class="card stat"><p>Points Issued Today</p><h2>4,300</h2></div>
+  <div class="card stat"><p>Pending Redeems</p><h2>12</h2></div>
+  <div class="card stat"><p>Total Sales</p><h2>₹1,20,500</h2></div>
+</div>
+
+<div class="card">
+  <h3>Sales & Points Overview</h3>
+  <div class="chart">Chart Area</div>
+</div>
+
+<div class="card">
+  <div class="row">
+    <h3>My Customers</h3>
+    <span class="link" onclick="location.href='dealer_customers.html'">View</span>
+  </div>
+  <div class="item"><span>Rahul Sharma</span><span>5,480 pts</span></div>
+  <div class="item"><span>Anita Verma</span><span>2,150 pts</span></div>
+</div>
+
+<div class="card">
+  <div class="row">
+    <h3>Redeem Requests</h3>
+    <span class="link" onclick="location.href='dealer_redeem.html'">View All</span>
+  </div>
+  <div class="item"><span>Rahul Sharma ₹54</span><span class="status pending">Pending</span></div>
+  <div class="item"><span>Anita Sharma ₹21</span><span class="status approved">Approved</span></div>
+</div>
+
+</div>
+
+<div class="bottom-nav">
+  <a href="dealer_dashboard.html" class="active">🏠<br>Home</a>
+  <a href="dealer_customers.html">👥<br>Customers</a>
+  <a href="dealer_redeem.html">🎯<br>Redeem</a>
+  <a href="dealer_offers.html">🔥<br>Offers</a>
+</div>
+
+</div>
+</body>
+</html>

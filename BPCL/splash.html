@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>BPCL Loyalty App</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+*{
+  box-sizing:border-box;
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+  margin:0;
+  background:#0a2e6d;
+}
+
+/* App container */
+.app{
+  max-width:420px;
+  min-height:100vh;
+  margin:auto;
+  position:relative;
+  background:
+    linear-gradient(rgba(10,46,109,0.85), rgba(10,46,109,0.85)),
+    url('bpcl-logo.png') center/200px no-repeat;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#fff;
+}
+
+/* Content */
+.splash{
+  width:100%;
+  padding:25px;
+  text-align:center;
+}
+
+/* Logo text fallback */
+.logo{
+  font-size:26px;
+  font-weight:bold;
+  margin-bottom:10px;
+}
+
+.tagline{
+  font-size:14px;
+  opacity:0.9;
+  margin-bottom:30px;
+}
+
+/* Role cards */
+.role{
+  background:#ffffff;
+  color:#0a2e6d;
+  padding:16px;
+  border-radius:10px;
+  margin-bottom:15px;
+  cursor:pointer;
+  font-weight:bold;
+  transition:0.2s;
+}
+
+.role:hover{
+  transform:scale(1.02);
+}
+
+.role small{
+  display:block;
+  font-size:12px;
+  color:#555;
+  margin-top:5px;
+}
+
+/* Footer */
+.footer{
+  font-size:11px;
+  opacity:0.8;
+  margin-top:25px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="app">
+  <div class="splash">
+
+    <div class="logo">BPCL Loyalty App</div>
+    <div class="tagline">Fuel • Rewards • Trust</div>
+
+    <!-- Admin -->
+    <div class="role" onclick="goAdmin()">
+      ADMIN
+    </div>
+
+    <!-- Dealer -->
+    <div class="role" onclick="goDealer()">
+      DEALER
+    </div>
+
+    <!-- Customer -->
+    <div class="role" onclick="goCustomer()">
+      CUSTOMER
+    </div>
+
+    <div class="footer">
+      © Bharat Petroleum Corporation Limited
+    </div>
+
+  </div>
+</div>
+
+<script>
+function goAdmin(){
+  window.location.href = "admin_login.html";
+}
+
+function goDealer(){
+  window.location.href = "dealer_register.html";
+}
+
+function goCustomer(){
+  window.location.href = "customer-register.html";
+}
+</script>
+
+</body>
+</html>

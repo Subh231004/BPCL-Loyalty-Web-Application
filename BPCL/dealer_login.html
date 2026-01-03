@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Login</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="dealer_style.css">
+</head>
+<body>
+
+<div class="app">
+
+  <!-- TOP BAR -->
+  <div class="topbar">Dealer Login</div>
+
+  <!-- CONTENT -->
+  <div class="content">
+
+    <!-- LOGO / TITLE -->
+    <div class="card" style="text-align:center;">
+      <h2>BPCL Loyalty</h2>
+      <p>Dealer Access Portal</p>
+    </div>
+
+    <!-- LOGIN FORM -->
+    <div class="card">
+      <label>Dealer Code</label>
+      <input type="text" placeholder="Enter Dealer Code"
+        style="width:100%;padding:8px;margin:6px 0;border-radius:6px;border:1px solid #ccc;">
+
+      <label>Password</label>
+      <input type="password" placeholder="Enter Password"
+        style="width:100%;padding:8px;margin:6px 0;border-radius:6px;border:1px solid #ccc;">
+
+      <button class="btn" onclick="location.href='dealer_dashboard.html'">
+        Login
+      </button>
+    </div>
+
+    <!-- LINKS -->
+    <div class="card" style="text-align:center;">
+      <p style="color:#1976d2;cursor:pointer;">
+        Forgot Password?
+      </p>
+      <p>
+        New Dealer?
+        <span class="link" onclick="location.href='dealer_register.html'">
+          Register Here
+        </span>
+      </p>
+    </div>
+
+  </div>
+
+</div>
+
+</body>
+</html>

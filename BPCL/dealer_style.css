@@ -1,0 +1,153 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, sans-serif;
+}
+
+body{
+  background:#cccccc;
+  display:flex;
+  justify-content:center;
+  padding:20px 0;
+}
+
+/* APP WRAPPER */
+.app{
+  width:100%;
+  max-width:420px;
+  background:#f4f6f9;
+  border-radius:14px;
+  overflow:hidden;
+  box-shadow:0 10px 30px rgba(0,0,0,.2);
+  position:relative;
+}
+
+/* TOP BAR */
+.topbar{
+  background:linear-gradient(to right,#f57c00,#fb8c00);
+  color:#fff;
+  padding:15px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  font-size:18px;
+}
+
+.topbar a{
+  color:white;
+  text-decoration:none;
+  margin-left:10px;
+}
+
+/* CONTENT */
+.content{
+  padding:12px;
+  padding-bottom:80px;
+}
+
+/* CARDS */
+.card{
+  background:white;
+  border-radius:10px;
+  padding:12px;
+  margin-bottom:12px;
+}
+
+/* STATS */
+.stats{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:10px;
+}
+
+.stat p{
+  font-size:13px;
+  color:#666;
+}
+
+.stat h2{
+  color:#f57c00;
+  margin-top:4px;
+}
+
+/* ROW */
+.row{
+  display:flex;
+  justify-content:space-between;
+  margin-bottom:8px;
+}
+
+.link{
+  color:#1976d2;
+  font-size:14px;
+  cursor:pointer;
+}
+
+/* ITEMS */
+.item{
+  display:flex;
+  justify-content:space-between;
+  padding:8px 0;
+  border-bottom:1px solid #eee;
+  font-size:14px;
+}
+
+.item:last-child{border-bottom:none}
+
+/* STATUS */
+.status{
+  padding:3px 10px;
+  border-radius:20px;
+  font-size:12px;
+  color:white;
+}
+
+.pending{background:#ffa000}
+.approved{background:#4caf50}
+
+/* CHART */
+.chart{
+  height:120px;
+  background:#eee;
+  border-radius:8px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#777;
+}
+
+/* BUTTON */
+.btn{
+  width:100%;
+  padding:10px;
+  background:#f57c00;
+  border:none;
+  color:white;
+  border-radius:6px;
+  margin-top:10px;
+}
+
+/* BOTTOM NAV */
+.bottom-nav{
+  position:absolute;
+  bottom:0;
+  width:100%;
+  background:white;
+  display:flex;
+  border-top:1px solid #ddd;
+}
+
+.bottom-nav a{
+  flex:1;
+  text-align:center;
+  padding:8px 0;
+  font-size:12px;
+  color:#777;
+  text-decoration:none;
+}
+
+.bottom-nav a.active{
+  color:#f57c00;
+  font-weight:bold;
+}
