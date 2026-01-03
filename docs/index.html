@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>BPCL Loyalty App — Demo</title>
+  <style>
+    body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; margin:0; padding:2rem; color:#222; background:#f7f8fb; }
+    .container { max-width:900px; margin:0 auto; background:#fff; padding:2rem; border-radius:8px; box-shadow:0 6px 24px rgba(23,23,23,0.08);} 
+    header { display:flex; gap:1rem; align-items:center; }
+    header img { height:56px; }
+    h1 { margin:0; font-size:1.6rem; }
+    .grid { display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-top:1.25rem; }
+    a.card { display:block; padding:1rem; border-radius:8px; background:#f4f6fb; text-decoration:none; color:#0b1b2b; border:1px solid rgba(15,37,66,0.03); }
+    footer { margin-top:1.5rem; font-size:0.9rem; color:#666; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <img src="../BPCL/img/preview.png" alt="BPCL Logo" onerror="this.style.display='none'"/>
+      <div>
+        <h1>BPCL Loyalty App</h1>
+        <div style="color:#666">Static UI prototype — Admin, Dealer, Customer flows</div>
+      </div>
+    </header>
+
+    <div class="grid" role="navigation" aria-label="Demo links">
+      <a class="card" href="../BPCL/splash.html" target="_blank">Open Splash / Landing Page</a>
+      <a class="card" href="../BPCL/admin_dashboard.html" target="_blank">Open Admin Dashboard</a>
+      <a class="card" href="../BPCL/dealer_dashboard.html" target="_blank">Open Dealer Dashboard</a>
+      <a class="card" href="../BPCL/dealer_register.html" target="_blank">Dealer Registration</a>
+    </div>
+
+    <section style="margin-top:1.25rem">
+      <h2 style="font-size:1.05rem;margin:0 0 .5rem 0">Notes</h2>
+      <ul>
+        <li>If links are broken, verify the files still exist in the <code>BPCL/</code> folder.</li>
+        <li>Place screenshots in <code>BPCL/img/</code> for README and docs previews.</li>
+      </ul>
+    </section>
+
+    <footer>
+      Made with ❤️ — open issues or PRs to improve design, accessibility and functionality.
+    </footer>
+  </div>
+</body>
+</html>
