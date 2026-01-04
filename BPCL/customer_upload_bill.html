@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Submit Bill</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+*{
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+    margin:0;
+    padding:0;
+}
+
+body{
+    background:#bfc0c3;
+    display:flex;
+    justify-content:center;
+    padding:15px;
+}
+
+.app{
+    width:100%;
+    max-width:420px;
+    background:#111827;
+    border-radius:14px;
+    overflow:hidden;
+    color:#e5e7eb;
+}
+
+/* TOP BAR */
+.topbar{
+    background:#0b4cb8;
+    color:#fff;
+    padding:14px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.topbar span{
+    font-size:20px;
+    cursor:pointer;
+}
+
+/* CONTENT */
+.content{
+    padding:14px;
+}
+
+/* CARD */
+.card{
+    background:#1f2933;
+    border-radius:10px;
+    padding:14px;
+    margin-bottom:12px;
+}
+
+/* TOGGLE BUTTONS */
+.toggle{
+    display:flex;
+    gap:10px;
+    margin-bottom:12px;
+}
+
+.toggle button{
+    flex:1;
+    padding:10px;
+    border:none;
+    border-radius:8px;
+    background:#374151;
+    color:#e5e7eb;
+    cursor:pointer;
+}
+
+.toggle button.active{
+    background:#2563eb;
+}
+
+/* FORM */
+label{
+    font-size:13px;
+    color:#cbd5e1;
+}
+
+input, select{
+    width:100%;
+    padding:10px;
+    margin-top:6px;
+    margin-bottom:12px;
+    border-radius:6px;
+    border:none;
+    background:#020617;
+    color:#e5e7eb;
+}
+
+/* UPLOAD BOX */
+.upload-box{
+    border:2px dashed #2563eb;
+    border-radius:10px;
+    padding:20px;
+    text-align:center;
+    cursor:pointer;
+}
+
+.upload-box p{
+    font-size:14px;
+    color:#93c5fd;
+}
+
+/* BUTTON */
+.btn{
+    width:100%;
+    padding:12px;
+    border:none;
+    border-radius:8px;
+    background:#22c55e;
+    color:#fff;
+    font-size:15px;
+    cursor:pointer;
+}
+
+/* HIDE */
+.hidden{
+    display:none;
+}
+</style>
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- TOP BAR -->
+    <div class="topbar">
+        <span onclick="location.href='customer_dashboard.html'">⬅</span>
+        <b>Submit Bill</b>
+        <span>📄</span>
+    </div>
+
+    <div class="content">
+
+        <!-- TOGGLE OPTIONS -->
+        <div class="toggle">
+            <button id="imgBtn" class="active" onclick="showImage()">📸 Upload Bill</button>
+            <button id="manualBtn" onclick="showManual()">✍️ Enter Manually</button>
+        </div>
+
+        <!-- IMAGE UPLOAD -->
+        <div id="imageSection" class="card">
+            <div class="upload-box" onclick="document.getElementById('billImage').click()">
+                <p>Tap to upload bill image</p>
+                <small>(JPG / PNG)</small>
+            </div>
+            <input type="file" id="billImage" accept="image/*" class="hidden">
+        </div>
+
+        <!-- MANUAL ENTRY -->
+        <div id="manualSection" class="card hidden">
+
+            <label>Dealer Name</label>
+            <input type="text" placeholder="Enter dealer name">
+
+            <label>Bill Number</label>
+            <input 
+            type="text"
+            placeholder="Enter bill number"
+            style="
+            width:100%;
+            padding:10px;
+            margin-top:6px;
+            margin-bottom:12px;
+            border-radius:6px;
+            border:none;
+            background:#020617;
+            color:#e5e7eb;  " required>
+
+
+            <label>Fuel Type</label>
+            <select>
+                <option>MS (Petrol)</option>
+                <option>HSD (Diesel)</option>
+                <option>Others (Lubricants)</option>
+            </select>
+
+        <!--    <label>Bill Amount (₹)</label>
+            <input type="number" placeholder="Enter bill amount">
+
+            <label>Date</label>
+            <input type="date">  
+        -->
+
+        <label>Bill Amount (₹)</label>
+<div style="display:flex;align-items:center;background:#020617;border-radius:6px;">
+  <span style="padding:10px;color:#9ca3af;">₹</span>
+  <input 
+    type="text"
+    inputmode="numeric"
+    pattern="[0-9]*"
+    placeholder="Enter bill amount"
+    style="border:none;background:transparent;color:#e5e7eb;width:100%;padding:10px;"
+    required
+  >
+</div>
+
+
+        </div>
+
+        <!-- SUBMIT -->
+        <button class="btn">Submit Bill</button>
+
+    </div>
+
+</div>
+
+<script>
+function showImage(){
+    document.getElementById("imageSection").classList.remove("hidden");
+    document.getElementById("manualSection").classList.add("hidden");
+    document.getElementById("imgBtn").classList.add("active");
+    document.getElementById("manualBtn").classList.remove("active");
+}
+
+function showManual(){
+    document.getElementById("manualSection").classList.remove("hidden");
+    document.getElementById("imageSection").classList.add("hidden");
+    document.getElementById("manualBtn").classList.add("active");
+    document.getElementById("imgBtn").classList.remove("active");
+}
+</script>
+
+</body>
+</html>

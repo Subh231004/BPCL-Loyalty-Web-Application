@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>History</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+/* RESET */
+*{
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+    margin:0;
+    padding:0;
+}
+
+body{
+    background:#c0c2c8;
+    display:flex;
+    justify-content:center;
+    padding:15px;
+}
+
+/* APP CONTAINER */
+.app{
+    width:100%;
+    max-width:420px;
+    background:#111827;
+    border-radius:14px;
+    overflow:hidden;
+    color:#e5e7eb;
+}
+
+/* TOP BAR */
+.topbar{
+    background:#0b4cb8;
+    color:#fff;
+    padding:14px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.topbar span{
+    font-size:20px;
+    cursor:pointer;
+}
+
+.topbar h2{
+    font-size:18px;
+}
+
+/* CONTENT */
+.content{
+    padding:14px;
+}
+
+/* FILTERS */
+.filters{
+    display:flex;
+    gap:8px;
+    margin-bottom:12px;
+}
+
+.filters select{
+    flex:1;
+    padding:8px;
+    border-radius:6px;
+    border:none;
+    background:#1f2933;
+    color:#e5e7eb;
+}
+
+/* CARD */
+.card{
+    background:#1f2933;
+    border-radius:10px;
+    padding:14px;
+    margin-bottom:12px;
+}
+
+/* HISTORY ITEM */
+.history-item{
+    display:flex;
+    justify-content:space-between;
+    padding:10px 0;
+    border-bottom:1px solid #374151;
+    font-size:14px;
+}
+
+.history-item:last-child{
+    border-bottom:none;
+}
+
+.history-item small{
+    color:#9ca3af;
+}
+
+/* TAGS */
+.tag{
+    padding:4px 10px;
+    border-radius:12px;
+    font-size:11px;
+    color:white;
+}
+
+.purchase{
+    background:#2563eb;
+}
+
+.redeem{
+    background:#ef4444;
+}
+
+/* POINTS */
+.points{
+    font-weight:bold;
+}
+
+/* BOTTOM NAV */
+.bottom-nav{
+    display:flex;
+    justify-content:space-around;
+    background:#020617;
+    padding:10px 0;
+    border-top:1px solid #1e293b;
+}
+
+.bottom-nav a{
+    text-decoration:none;
+    color:#cbd5e1;
+    font-size:12px;
+    text-align:center;
+}
+
+.bottom-nav a.active{
+    color:#3b82f6;
+}
+
+.bottom-nav span{
+    font-size:18px;
+    display:block;
+}
+</style>
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- TOP BAR -->
+    <div class="topbar">
+        <span onclick="location.href='customer_dashboard.html'">⬅</span>
+        <h2>History</h2>
+        <span onclick="location.href='customer_profile.html'">👤</span>
+    </div>
+
+    <!-- CONTENT -->
+    <div class="content">
+
+        <!-- FILTERS -->
+        <div class="filters">
+            <select>
+                <option>All</option>
+                <option>Purchases</option>
+                <option>Redeems</option>
+            </select>
+
+            <select>
+                <option>Jan 2025</option>
+                <option>Dec 2024</option>
+                <option>Nov 2024</option>
+            </select>
+        </div>
+
+        <!-- HISTORY CARD -->
+        <div class="card">
+
+            <div class="history-item">
+                <div>
+                    Fuel Purchase<br>
+                    <small>MS Petrol · Jan 2025</small>
+                </div>
+                <div style="text-align:right;">
+                    <span class="tag purchase">PURCHASE</span><br>
+                    <span class="points">+120 pts</span>
+                </div>
+            </div>
+
+            <div class="history-item">
+                <div>
+                    Fuel Purchase<br>
+                    <small>HSD Diesel · Jan 2025</small>
+                </div>
+                <div style="text-align:right;">
+                    <span class="tag purchase">PURCHASE</span><br>
+                    <span class="points">+95 pts</span>
+                </div>
+            </div>
+
+            <div class="history-item">
+                <div>
+                    Redeem Voucher<br>
+                    <small>Fuel Voucher · Dec 2024</small>
+                </div>
+                <div style="text-align:right;">
+                    <span class="tag redeem">REDEEM</span><br>
+                    <span class="points">-300 pts</span>
+                </div>
+            </div>
+
+            <div class="history-item">
+                <div>
+                    Lubricant Purchase<br>
+                    <small>Others · Dec 2024</small>
+                </div>
+                <div style="text-align:right;">
+                    <span class="tag purchase">PURCHASE</span><br>
+                    <span class="points">+80 pts</span>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- BOTTOM NAV -->
+    <div class="bottom-nav">
+        <a href="customer_dashboard.html">
+            <span>🏠</span>Home
+        </a>
+        <a href="customer_history.html" class="active">
+            <span>📜</span>History
+        </a>
+        <a href="customer_redeem.html">
+            <span>🎁</span>Redeem
+        </a>
+        <a href="customer_profile.html">
+            <span>👤</span>Profile
+        </a>
+    </div>
+
+</div>
+
+</body>
+</html>
